@@ -11,6 +11,7 @@ npx create-react-app $1 --template typescript
 cp eslintrc.template.json $1/.eslintrc.json
 cp prettierrc.template.json $1/.prettierrc.json
 cd $1
+echo '.eslintcache' >> .gitignore
 yarn add -D \
   eslint \
   @typescript-eslint/eslint-plugin \
