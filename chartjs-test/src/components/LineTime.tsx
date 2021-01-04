@@ -24,6 +24,14 @@ const data = {
 
 const options = {
   scales: {
+    yAxes: [
+      {
+        ticks: {
+          max: 1,
+          min: -1,
+        },
+      },
+    ],
     xAxes: [
       {
         type: 'time',
