@@ -1,19 +1,18 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
-const LogoutButton = (props: any) => {
+const LogoutButton = () => {
   const { isAuthenticated, logout } = useAuth0();
 
   return isAuthenticated ? (
-    <Button
-      variant="outlined"
+    <Typography
       onClick={() => {
         logout({ returnTo: window.location.origin });
-      }}
-      {...props}>
+      }}>
       Logout
-    </Button>
+    </Typography>
   ) : null;
 };
 

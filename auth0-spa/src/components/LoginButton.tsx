@@ -6,7 +6,7 @@ const LoginButton = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   return !isAuthenticated ? (
-    <Button variant="contained" onClick={loginWithRedirect}>
+    <Button color="inherit" onClick={loginWithRedirect}>
       Login
     </Button>
   ) : null;
