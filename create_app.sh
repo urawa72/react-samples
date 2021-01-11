@@ -12,6 +12,9 @@ cp eslintrc.template.json $1/.eslintrc.json
 cp prettierrc.template.json $1/.prettierrc.json
 cd $1
 echo '.eslintcache' >> .gitignore
+yarn add \
+  react-router \
+  react-router-dom
 yarn add -D \
   eslint \
   @typescript-eslint/eslint-plugin \
@@ -20,4 +23,6 @@ yarn add -D \
   eslint-config-prettier \
   eslint-plugin-prettier \
   eslint-plugin-react \
-  eslint-plugin-react-hooks
+  eslint-plugin-react-hooks \
+  @types/react-router \
+  @types/react-router-dom
