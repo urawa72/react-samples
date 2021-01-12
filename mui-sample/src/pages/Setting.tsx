@@ -1,10 +1,7 @@
 import React from 'react';
+import ResponsiveDrawer from '../components/ResponsiveDrawer';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import MyButton from './MyButton';
-import MyTypography from './MyTypography';
-import MyFab from './MyFab';
-import MyProgress from './MyProgress';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,23 +20,21 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Home: React.FC = () => {
+const Setting: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
-      <Container maxWidth="lg" className={classes.container}>
-        <Typography variant="h4" className={classes.title}>
-          ホーム
-        </Typography>
-        <MyButton />
-        <MyFab />
-        <MyProgress />
-        <MyTypography />
-      </Container>
-    </main>
+    <ResponsiveDrawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <Container maxWidth="lg" className={classes.container}>
+          <Typography variant="h4" className={classes.title}>
+            設定
+          </Typography>
+        </Container>
+      </main>
+    </ResponsiveDrawer>
   );
 };
 
-export default Home;
+export default Setting;

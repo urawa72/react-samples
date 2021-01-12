@@ -1,6 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -67,10 +67,14 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerText: {
       // color: '#cecfd2',
     },
-    listItem: {
-      // '&:hover': {
-      //   background: 'rgba(0, 0, 0, 0.3)',
-      // },
+    navLink: {
+      '&.active': {
+        color: '#263239',
+        background: theme.palette.grey[200],
+        '& .MuiListItemIcon-root': {
+          color: '#263239',
+        },
+      },
     },
   })
 );
@@ -88,25 +92,45 @@ const ResponsiveDrawer: React.FC<{ children: React.ReactNode }> = ({
     <div>
       <div className={classes.toolbar} />
       <List>
-        <ListItem button key="1" className={classes.listItem}>
+        <ListItem
+          exact
+          component={NavLink}
+          to="/"
+          button
+          className={classes.navLink}>
           <ListItemIcon className={classes.drawerText}>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText} primary="ホーム" />
         </ListItem>
-        <ListItem button key="2" className={classes.listItem}>
+        <ListItem
+          exact
+          component={NavLink}
+          to="/test"
+          button
+          className={classes.navLink}>
           <ListItemIcon className={classes.drawerText}>
             <RouterIcon />
           </ListItemIcon>
-          <ListItemText className={classes.drawerText} primary="あいうえお" />
+          <ListItemText className={classes.drawerText} primary="テスト" />
         </ListItem>
-        <ListItem button key="3" className={classes.listItem}>
+        <ListItem
+          exact
+          component={NavLink}
+          to="/sample"
+          button
+          className={classes.navLink}>
           <ListItemIcon className={classes.drawerText}>
             <NotificationsActiveIcon />
           </ListItemIcon>
-          <ListItemText className={classes.drawerText} primary="かきこくこ" />
+          <ListItemText className={classes.drawerText} primary="サンプル" />
         </ListItem>
-        <ListItem button key="4" className={classes.listItem}>
+        <ListItem
+          exact
+          component={NavLink}
+          to="/setting"
+          button
+          className={classes.navLink}>
           <ListItemIcon className={classes.drawerText}>
             <SettingsIcon />
           </ListItemIcon>

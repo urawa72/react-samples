@@ -1,51 +1,13 @@
 import React from 'react';
-import './App.css';
-import { Route } from 'react-router-dom';
-import ResponsiveDrawer from './components/ResponsiveDrawer';
-import Home from './components/Home';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Test from './pages/Test';
+import Sample from './pages/Sample';
+import Setting from './pages/Setting';
+import NotFound from './pages/NotFound';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-const theme = createMuiTheme({
-  // box-shadowをすべてなくす
-  shadows: [
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-  ],
-  palette: {
-    primary: {
-      main: '#4caf50',
-      contrastText: ' #fff',
-    },
-    secondary: {
-      main: '#3f51b5',
-      contrastText: ' #fff',
-    },
-  },
-});
+import { ThemeProvider } from '@material-ui/core/styles';
+import { theme } from './utils/theme';
 
 console.log(theme);
 
@@ -53,9 +15,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <ResponsiveDrawer>
+      <Switch>
         <Route exact path="/" component={Home} />
-      </ResponsiveDrawer>
+        <Route exact path="/test" component={Test} />
+        <Route exact path="/sample" component={Sample} />
+        <Route exact path="/setting" component={Setting} />
+        <Route path="*" component={NotFound} />
+      </Switch>
     </ThemeProvider>
   );
 }
