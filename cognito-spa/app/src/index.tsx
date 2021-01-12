@@ -3,26 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Amplify } from 'aws-amplify';
-
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID!;
-const WEB_CLIENT_ID = process.env.REACT_APP_WEB_CLIENT_ID!;
-/* eslint-enable */
-
-Amplify.configure({
-  Auth: {
-    region: 'ap-northeast-1',
-    userPoolId: CLIENT_ID,
-    userPoolWebClientId: WEB_CLIENT_ID,
-    cookieStorage: {
-      domain: 'localhost',
-      expires: 1,
-      sameSite: 'lax',
-      secure: false, // if https, set true
-    },
-  },
-});
 
 ReactDOM.render(
   <React.StrictMode>
