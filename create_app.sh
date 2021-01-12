@@ -8,8 +8,8 @@ if [ $# != 1 ]; then
 fi
 
 npx create-react-app $1 --template typescript
-cp eslintrc.template.json $1/.eslintrc.json
-cp prettierrc.template.json $1/.prettierrc.json
+cp eslintrc.template.js $1/.eslintrc.js
+cp prettierrc.template.js $1/.prettierrc.js
 cd $1
 echo '.eslintcache' >> .gitignore
 yarn add \
