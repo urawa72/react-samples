@@ -26,8 +26,8 @@ import AuthHostedUi from './components/AuthHostedUi';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <AuthPrebuildUi />
-      {/* <AuthHostedUi /> */}
+      {/* <AuthPrebuildUi /> */}
+      <AuthHostedUi />
     </div>
   );
 };

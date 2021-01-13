@@ -4,6 +4,8 @@
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID!;
 const WEB_CLIENT_ID = process.env.REACT_APP_WEB_CLIENT_ID!;
 const AUTH_DOMAIN = process.env.REACT_APP_AUTH_DOMAIN!;
+const APP_DOMAIN = process.env.REACT_APP_APP_DOMAIN!;
+const APP_URL = process.env.REACT_APP_APP_URL!;
 /* eslint-enable */
 
 // for prebuild ui
@@ -13,10 +15,10 @@ export const authConfig = {
     userPoolId: CLIENT_ID,
     userPoolWebClientId: WEB_CLIENT_ID,
     cookieStorage: {
-      domain: 'localhost',
+      domain: APP_DOMAIN,
       expires: 1,
       sameSite: 'lax',
-      secure: false, // if https, set true
+      secure: true, // if https, set true
     },
   },
 };
@@ -28,10 +30,10 @@ export const oauthConfig = {
     userPoolId: CLIENT_ID,
     userPoolWebClientId: WEB_CLIENT_ID,
     cookieStorage: {
-      domain: 'localhost',
+      domain: APP_DOMAIN,
       expires: 1,
       sameSite: 'lax',
-      secure: false, // if https, set true
+      secure: true, // if https, set true
     },
     // OPTIONAL - Hosted UI configuration
     oauth: {
@@ -43,8 +45,8 @@ export const oauthConfig = {
         'openid',
         'aws.cognito.signin.user.admin',
       ],
-      redirectSignIn: 'http://localhost:3000',
-      redirectSignOut: 'http://localhost:3000',
+      redirectSignIn: APP_URL,
+      redirectSignOut: APP_URL,
       responseType: 'code', // or 'token', note that REFRESH token will only be generated when the responseType is code
     },
   },
