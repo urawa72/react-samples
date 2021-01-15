@@ -18,7 +18,7 @@ export const authConfig = {
       domain: APP_DOMAIN,
       expires: 1,
       sameSite: 'lax',
-      secure: true, // if https, set true
+      secure: false, // if https, set true
     },
   },
 };

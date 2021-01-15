@@ -3,6 +3,7 @@ import { Amplify, Auth } from 'aws-amplify';
 import { authConfig } from '../utils/aws-config';
 import {
   AmplifyAuthenticator,
+  AmplifySignIn,
   AmplifySignOut,
   AmplifySignUp,
 } from '@aws-amplify/ui-react';
@@ -24,6 +25,11 @@ const AuthPrebuildUi = () => {
 
   return (
     <AmplifyAuthenticator>
+      <AmplifySignIn
+        headerText="My Custom Sign In Text"
+        slot="sign-in"
+        usernameAlias="email"
+      />
       <AmplifySignUp
         slot="sign-up"
         usernameAlias="email"
