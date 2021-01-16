@@ -1,24 +1,20 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import ResponsiveDrawer from './components/ResponsiveDrawer';
+import SecureRoute from './components/route/SecureRoute';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 function App() {
   const { isLoading } = useAuth0();
-  if (isLoading) {
-    return <p>Loading</p>;
-  }
 
-  return (
-    <>
-      <ResponsiveDrawer />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </BrowserRouter>
-    </>
+  return isLoading ? null : (
+    <BrowserRouter>
+      <Switch>
+        <SecureRoute exact path="/" component={Home} />
+        <SecureRoute path="*" component={NotFound} noLayout={true} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

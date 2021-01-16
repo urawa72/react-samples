@@ -9,23 +9,19 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButton';
-
-type StyleProps = {
-  drawerWidth: number;
-};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
       flexGrow: 1,
     },
-    appBar: (props: StyleProps) => ({
+    appBar: {
       [theme.breakpoints.up('sm')]: {
-        width: `calc(100% - ${props.drawerWidth}px)`,
-        marginLeft: props.drawerWidth,
+        // width: `calc(100% - ${props.drawerWidth}px)`,
+        // marginLeft: props.drawerWidth,
+        zIndex: theme.zIndex.drawer + 1,
       },
-    }),
+    },
     menuButton: {
       marginRight: theme.spacing(2),
       [theme.breakpoints.up('sm')]: {
@@ -43,9 +39,8 @@ type Props = {
   menuToggleHandler: () => void;
 };
 
-const MenuAppBar: React.FC<Props> = (props) => {
-  const drawerWidth = props.drawerWidth;
-  const classes = useStyles({ drawerWidth });
+const Header: React.FC<Props> = (props) => {
+  const classes = useStyles();
   const { isAuthenticated, logout } = useAuth0();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -106,10 +101,9 @@ const MenuAppBar: React.FC<Props> = (props) => {
             </Menu>
           </div>
         )}
-        {!isAuthenticated && <LoginButton />}
       </Toolbar>
     </AppBar>
   );
 };
 
-export default MenuAppBar;
+export default Header;
