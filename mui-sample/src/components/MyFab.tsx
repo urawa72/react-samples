@@ -5,6 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import Typography from '@material-ui/core/Typography';
 import MyCard from './MyCard';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -26,7 +27,7 @@ const MyFab = () => {
   return (
     <MyCard>
       <div className={classes.root}>
-        <div>Floationg Action Buttons</div>
+        <Typography variant="subtitle1">Floating Action Buttons</Typography>
         <Fab color="primary" aria-label="add">
           <AddIcon />
         </Fab>

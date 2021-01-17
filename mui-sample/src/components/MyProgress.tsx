@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 import MyCard from './MyCard';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
+    subTitle: {
+      paddingBottom: theme.spacing(2),
     },
     circles: {
       '& > * + *': {
@@ -22,13 +22,13 @@ const MyProgress = () => {
 
   return (
     <MyCard>
-      <div className={classes.root}>
-        <div>Floationg Action Buttons</div>
-        <div className={classes.circles}>
-          <CircularProgress />
-          <CircularProgress color="secondary" />
-          <CircularProgress color="inherit" />
-        </div>
+      <Typography variant="subtitle1" className={classes.subTitle}>
+        Circular Progress
+      </Typography>
+      <div className={classes.circles}>
+        <CircularProgress />
+        <CircularProgress color="secondary" />
+        <CircularProgress color="inherit" />
       </div>
     </MyCard>
   );

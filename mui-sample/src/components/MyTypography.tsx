@@ -5,19 +5,30 @@ import Typography from '@material-ui/core/Typography';
 const MyTypography: React.FC = () => {
   return (
     <MyCard>
-      <Typography paragraph>
-        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-        ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum
-        integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
-        lacus sed viverra tellus. Purus sit amet volutpat consequat mauris.
-        Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-        vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
-        accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac.
-        Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique
-        senectus et. Adipiscing elit duis tristique sollicitudin nibh sit.
-        Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra
-        maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
-        aliquam ultrices sagittis orci a.
+      <Typography variant="subtitle1">Typography</Typography>
+      <Typography variant="h1">h1 Text</Typography>
+      <Typography variant="h2">h2 Text</Typography>
+      <Typography variant="h3">h3 Text</Typography>
+      <Typography variant="h4">h4 Text</Typography>
+      <Typography variant="h5">h5 Text</Typography>
+      <Typography variant="h6">h6 Text</Typography>
+      <Typography variant="subtitle1">Sub Title Text</Typography>
+      <Typography variant="subtitle2">Sub Title Text</Typography>
+      <Typography variant="caption">Caption Text</Typography>
+      <Typography variant="body1" color="primary">
+        Primary Color
+      </Typography>
+      <Typography variant="body1" color="secondary">
+        Secondary Color
+      </Typography>
+      <Typography variant="body1" color="textPrimary">
+        Text Primary Color
+      </Typography>
+      <Typography variant="body1" color="textSecondary">
+        Text Secondary Color
+      </Typography>
+      <Typography variant="body1" color="error">
+        Error Color
       </Typography>
     </MyCard>
   );

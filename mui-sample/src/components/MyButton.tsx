@@ -1,5 +1,6 @@
 import React from 'react';
 import MyCard from './MyCard';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
@@ -19,7 +20,7 @@ const MyButton = () => {
   return (
     <MyCard>
       <div className={classes.buttons}>
-        <div>Contained Buttons</div>
+        <Typography variant="subtitle1">Contained Buttons</Typography>
         <Button variant="contained">Default</Button>
         <Button variant="contained" color="primary">
           Primary
@@ -33,7 +34,7 @@ const MyButton = () => {
         <Button variant="contained" color="primary" href="#contained-buttons">
           Link
         </Button>
-        <div>Outlined Buttons</div>
+        <Typography variant="subtitle1">Outlined Buttons</Typography>
         <Button variant="outlined">Default</Button>
         <Button variant="outlined" color="primary">
           Primary
