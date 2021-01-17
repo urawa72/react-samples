@@ -29,14 +29,14 @@ export const theme = createMuiTheme({
   //   'none',
   //   'none',
   // ],
-  palette: {
-    primary: {
-      main: '#4caf50',
-      contrastText: ' #fff',
-    },
-    secondary: {
-      main: '#3f51b5',
-      contrastText: ' #fff',
-    },
-  },
+  // palette: {
+  //   primary: {
+  //     main: '#4caf50',
+  //     contrastText: ' #fff',
+  //   },
+  //   secondary: {
+  //     main: '#3f51b5',
+  //     contrastText: ' #fff',
+  //   },
+  // },
 });

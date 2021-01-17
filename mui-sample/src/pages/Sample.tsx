@@ -1,5 +1,4 @@
 import React from 'react';
-import ResponsiveDrawer from '../components/ResponsiveDrawer';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
@@ -24,16 +23,14 @@ const Sample: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <ResponsiveDrawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Typography variant="h4" className={classes.title}>
-            サンプル
-          </Typography>
-        </Container>
-      </main>
-    </ResponsiveDrawer>
+    <main className={classes.content}>
+      <div className={classes.toolbar} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Typography variant="h4" className={classes.title}>
+          サンプル
+        </Typography>
+      </Container>
+    </main>
   );
 };
 

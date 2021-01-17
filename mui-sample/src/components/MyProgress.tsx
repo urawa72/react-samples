@@ -7,12 +7,12 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      flexDirection: 'column',
+    },
+    circles: {
       '& > * + *': {
         marginLeft: theme.spacing(2),
       },
-    },
-    circleColor: {
-      color: '#26323A',
     },
   })
 );
@@ -23,9 +23,12 @@ const MyProgress = () => {
   return (
     <MyCard>
       <div className={classes.root}>
-        <CircularProgress />
-        <CircularProgress color="secondary" />
-        <CircularProgress className={classes.circleColor} />
+        <div>Floationg Action Buttons</div>
+        <div className={classes.circles}>
+          <CircularProgress />
+          <CircularProgress color="secondary" />
+          <CircularProgress color="inherit" />
+        </div>
       </div>
     </MyCard>
   );
