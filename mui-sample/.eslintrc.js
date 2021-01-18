@@ -11,6 +11,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react',
     'prettier/@typescript-eslint',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   settings: {
     react: {
@@ -31,6 +34,12 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'import/order': [
+      'warn',
+      {
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+      },
+    ],
   },
   overrides: [
     {

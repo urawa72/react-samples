@@ -1,6 +1,6 @@
 import React from 'react';
-import MyCard from './MyCard';
 import Typography from '@material-ui/core/Typography';
+import MyCard from './MyCard';
 
 const MyTypography: React.FC = () => {
   return (

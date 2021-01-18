@@ -1,7 +1,7 @@
 import React from 'react';
 import Devider from '@material-ui/core/Divider';
-import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 
 export default function MyTabs() {
   const [value, setValue] = React.useState(2);

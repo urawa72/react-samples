@@ -1,7 +1,7 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
-import Typography from '@material-ui/core/Typography';
 import MyCard from './MyCard';
 
 const useStyles = makeStyles((theme: Theme) =>
