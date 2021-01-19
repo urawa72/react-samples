@@ -8,8 +8,8 @@ if [ $# != 1 ]; then
 fi
 
 npx create-react-app $1 --template typescript
-cp eslintrc.template.js $1/.eslintrc.js
-cp prettierrc.template.js $1/.prettierrc.js
+cp eslintrc.template.json $1/.eslintrc.json
+cp prettierrc.template.json $1/.prettierrc.json
 cd $1
 echo '.eslintcache' >> .gitignore
 yarn add \
@@ -24,5 +24,6 @@ yarn add -D \
   eslint-plugin-prettier \
   eslint-plugin-react \
   eslint-plugin-react-hooks \
+  eslint-plugin-import \
   @types/react-router \
   @types/react-router-dom
