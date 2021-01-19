@@ -4,32 +4,24 @@ import BaseLayout from '../layout/BaseLayout';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface BaseRouteProps {
-  component: React.FC<any>;
   path: string;
   exact?: boolean;
   noLayout?: boolean;
+  children: React.ReactNode;
 }
 /* eslint-enable */
 
 const BaseRoute = ({
-  component: Component,
   path: path,
   exact: exact = true,
   noLayout: noLayout = false,
+  children: children,
 }: BaseRouteProps) => {
   return (
-    <Route
-      exact={exact}
-      path={path}
-      render={(props) => {
-        if (noLayout) return <Component {...props} />;
-        return (
-          <BaseLayout>
-            <Component {...props} />
-          </BaseLayout>
-        );
-      }}
-    />
+    <Route exact={exact} path={path}>
+      {noLayout && children}
+      {!noLayout && <BaseLayout>{children}</BaseLayout>}
+    </Route>
   );
 };
 

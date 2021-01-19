@@ -17,10 +17,18 @@ export default function App() {
       <CssBaseline />
       <BrowserRouter>
         <Switch>
-          <BaseRoute exact path="/" component={Home} />
-          <BaseRoute exact path="/sample" component={Sample} />
-          <BaseRoute exact path="/setting" component={Setting} />
-          <BaseRoute path="*" component={NotFound} noLayout={true} />
+          <BaseRoute exact path="/">
+            <Home />
+          </BaseRoute>
+          <BaseRoute exact path="/sample">
+            <Sample />
+          </BaseRoute>
+          <BaseRoute exact path="/setting">
+            <Setting />
+          </BaseRoute>
+          <BaseRoute path="*" noLayout={true}>
+            <NotFound />
+          </BaseRoute>
         </Switch>
       </BrowserRouter>
     </ThemeProvider>

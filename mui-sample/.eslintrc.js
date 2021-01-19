@@ -11,9 +11,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react',
     'prettier/@typescript-eslint',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
   ],
   settings: {
     react: {
@@ -28,7 +25,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'import'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
