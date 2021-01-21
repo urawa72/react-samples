@@ -1,5 +1,6 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Header from './Header';
 import ResponsiveDrawer from './ResponsiveDrawer';
@@ -31,10 +32,15 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
+    container: {
+      paddingBottom: theme.spacing(4),
+    },
   })
 );
 
-const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const BaseLayout: React.FC<{ children: React.ReactElement }> = ({
+  children,
+}) => {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -56,7 +62,9 @@ const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {children}
+        <Container maxWidth="lg" className={classes.container}>
+          {children}
+        </Container>
       </main>
     </div>
   );

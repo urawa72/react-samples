@@ -1,33 +1,31 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { withAuthenticationRequired } from '@auth0/auth0-react';
-import BaseLayout from '../layout/BaseLayout';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 interface SecureRouteProps {
-  component: React.FC<any>;
+  component: React.FC;
   path: string;
   exact?: boolean;
   noLayout?: boolean;
 }
-/* eslint-enable */
 
-const SecureRoute = ({
-  component: Component,
-  path: path,
-  exact: exact,
-  noLayout: noLayout,
-}: SecureRouteProps) => {
-  const SecureComponent = withAuthenticationRequired(Component, {});
+interface SecureRouteProps {
+  component: React.FC;
+  path: string;
+  exact?: boolean;
+}
+
+const SecureRoute: React.FC<SecureRouteProps> = ({
+  component,
+  exact,
+  path,
+}) => {
   return (
-    <Route exact={exact} path={path}>
-      {noLayout && <SecureComponent />}
-      {!noLayout && (
-        <BaseLayout>
-          <SecureComponent />
-        </BaseLayout>
-      )}
-    </Route>
+    <Route
+      exact={exact}
+      path={path}
+      component={withAuthenticationRequired(component, {})}
+    />
   );
 };
 
