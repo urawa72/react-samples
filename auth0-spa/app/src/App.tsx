@@ -11,10 +11,10 @@ function App() {
   const { isLoading, getAccessTokenSilently, getIdTokenClaims } = useAuth0();
 
   (async () => {
-    const token = await getAccessTokenSilently();
     const claims = await getIdTokenClaims();
-    console.log(token);
+    const token = await getAccessTokenSilently();
     console.log(claims);
+    console.log(token);
   })();
 
   if (isLoading) {
