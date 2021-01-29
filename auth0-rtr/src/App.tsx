@@ -1,17 +1,11 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './Home';
+import Users from './Users';
 
 const App: React.FC = () => {
-  const {
-    isLoading,
-    isAuthenticated,
-    error,
-    user,
-    loginWithRedirect,
-    logout,
-    getIdTokenClaims,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { isLoading, isAuthenticated, error, loginWithRedirect } = useAuth0();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -21,19 +15,13 @@ const App: React.FC = () => {
   }
 
   if (isAuthenticated) {
-    (async () => {
-      const claims = await getIdTokenClaims();
-      const token = await getAccessTokenSilently();
-      console.log(claims);
-      console.log(token);
-    })();
     return (
-      <div>
-        <img src={user.picture} />
-        <button onClick={() => logout({ returnTo: window.location.origin })}>
-          Log out
-        </button>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users" component={Users} />
+        </Switch>
+      </BrowserRouter>
     );
   } else {
     return <button onClick={loginWithRedirect}>Log in</button>;
