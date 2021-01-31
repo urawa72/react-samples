@@ -12,10 +12,6 @@ import { NavLink } from 'react-router-dom';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: theme.mixins.toolbar,
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
     navLink: {
       '&.active': {
         color: '#263239',

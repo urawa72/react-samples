@@ -15,9 +15,6 @@ interface StyleProps {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    grow: {
-      flexGrow: 1,
-    },
     drawer: (props: StyleProps) => ({
       [theme.breakpoints.up('sm')]: {
         width: props.drawerWidth,

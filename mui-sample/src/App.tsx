@@ -9,8 +9,6 @@ import Sample from './pages/Sample';
 import Setting from './pages/Setting';
 import { theme } from './utils/theme';
 
-console.log(theme);
-
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
