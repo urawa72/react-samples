@@ -1,0 +1,45 @@
+.App {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.app {
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  background: #fff;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.card header {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.card main {
+  padding: 15px;
+}
+
+.brush {
+  width: 1000px;
+  height: 300px;
+}
+
+.chart-container {
+  position: relative;
+}
+
+.chart-brush {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* .chart-brush .recharts-cartesian-axis-ticks { */
+/*   display: none */
+/* } */
+
