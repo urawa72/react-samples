@@ -10,6 +10,13 @@ Exporting(Highcharts);
 
 const data = generateData();
 
+// const data = [
+//   [1612412370636, 300],
+//   [1612412368636, 100],
+//   [1612412369636, 200],
+//   [1612412371636, 400],
+// ];
+
 const options = {
   title: {
     text: 'test',

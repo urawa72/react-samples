@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 
 const now = DateTime.local();
-const MAX_DATA_COUNT = 100;
+const MAX_DATA_COUNT = 10000;
 const timeData = [...Array(MAX_DATA_COUNT)].map((_, i) => {
   return {
     timestamp: now.plus({ second: i }).toFormat('y/MM/dd HH:mm:ss'),

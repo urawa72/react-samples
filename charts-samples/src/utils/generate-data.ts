@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-const baseCount = 3000;
+const baseCount = 30000;
 const now = DateTime.local();
 
 const getRandomNumber = (min: number, max: number) => {
@@ -43,6 +43,26 @@ export const generateRechartsData = (
       timestamp: now.plus({ minute: i * 5 }).toMillis(),
       value: getRandomNumber(values.value[index - 1], values.value[index]),
     });
+  }
+  return data;
+};
+
+export const generateGoogleChartData = (base = baseCount): [Date, number][] => {
+  const count = base * 3;
+  const data: [Date, number][] = [];
+  const values = {
+    value: [20, 25, 30, 35],
+  };
+  for (let i = 0; i < count; i++) {
+    let index = 3;
+    if (i <= base) index = 1;
+    if (base < i && i <= base * 2) index = 2;
+
+    const day = new Date(now.plus({ minute: i * 5 }).toMillis());
+    data.push([
+      day,
+      getRandomNumber(values.value[index - 1], values.value[index]),
+    ]);
   }
   return data;
 };

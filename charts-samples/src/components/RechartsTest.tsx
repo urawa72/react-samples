@@ -10,7 +10,6 @@ import {
   Tooltip,
   Brush,
 } from 'recharts';
-import { DateTime } from 'luxon';
 import { generateRechartsData } from '../utils/generate-data';
 
 const BASE_DATA_COUNT = 3000;
@@ -33,7 +32,7 @@ const RechartsTest: React.FC = () => {
 
   return (
     <div>
-      <h1>Recharts Test</h1>
+      <h1>Recharts Test1</h1>
       <section className="baseline-container card">
         <header>Baseline View</header>
         <main>
@@ -50,15 +49,6 @@ const RechartsTest: React.FC = () => {
               dot={false}
             />
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="timestamp"
-              allowDataOverflow
-              tickFormatter={(timestamp) =>
-                DateTime.fromMillis(timestamp).toFormat('HH:mm:ss')
-              }
-              type="number"
-              scale="time"
-            />
             <YAxis domain={['auto', 'auto']} />
             <Tooltip />
             <ReferenceLine y={0} stroke="#000" />
