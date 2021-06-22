@@ -16,14 +16,15 @@ yarn add \
   react-router \
   react-router-dom
 yarn add -D \
+  npm-run-all \
   eslint \
   @typescript-eslint/eslint-plugin \
   @typescript-eslint/parser \
   prettier \
   eslint-config-prettier \
-  eslint-plugin-prettier \
   eslint-plugin-react \
   eslint-plugin-react-hooks \
   eslint-plugin-import \
+  eslint-plugin-jsx-a11y \
   @types/react-router \
   @types/react-router-dom
